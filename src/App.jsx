@@ -1,14 +1,18 @@
 
+import { Suspense } from 'react';
 import './App.css'
 import Container from './components/container'
 
 function App() {
-  
+  const datapromise = fetch('https://openapi.programming-hero.com/api/all').then(res => res.json());
 
   return (
     <>
-      <h6>hello</h6>
-      <Container></Container>
+     
+      <Suspense fallback = {<p>Data Is Loading...</p>}>
+     <Container datapromise = {datapromise}></Container>
+      </Suspense>
+      
     </>
   )
 }

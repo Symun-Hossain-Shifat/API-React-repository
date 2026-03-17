@@ -19,12 +19,14 @@ img{
     height:150px;
 }
 .visited{
-    background-color:  rgb(153, 155, 153);
+    border: 5px solid green;
      margin: 10px;
     padding: 10px;
+    border-radius: 20px;
 }
 .notvisited{
-     background-color:  rgb(148, 145, 145);
+     border: 5px solid red;
       margin: 10px;
     padding: 10px;
+    border-radius: 20px;
 }

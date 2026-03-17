@@ -1,12 +1,21 @@
 import React, { useState } from 'react';
 
-const Country = ({Data}) => {
+const Country = ({Data , visitedcount }) => {
     console.log(Data);
     const population = Data.population.population;
     const area = Data.area.area;
     const [value,setvalue] = useState(false)
-    function showhide () {
-     setvalue(value?false:true);
+    function showhide (e) {
+        e.preventDefault();
+        const newvalue = !value;
+     setvalue(newvalue);
+     if(newvalue){
+      visitedcount(Data)
+     }else{
+        alert('Present exist')
+        
+     }
+     
     }
     return (
         <div className={value?'visited':'notvisited'}>
